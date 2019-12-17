@@ -148,6 +148,7 @@ impl From<TransactionCancelled> for Transaction {
 /// Transactions group operations into a unit with the properties of atomicity, isolation, and durability. Transactions also provide the ability to maintain an application’s invariants or integrity constraints, supporting the property of consistency. Together these properties are known as ACID.
 ///
 /// Transactions are also causally consistent: once a transaction has been successfully committed, all subsequently created transactions will see the modifications made by it.
+#[derive(Clone)]
 pub struct Transaction {
     // Order of fields should not be changed, because Rust drops field top-to-bottom, and
     // transaction should be dropped before cluster.
