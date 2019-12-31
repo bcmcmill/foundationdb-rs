@@ -396,7 +396,7 @@ impl DoubleEndedIterator for FdbValuesIter {
 
 /// A keyvalue you can own
 ///
-/// Until dropped, this might prevent multiple key/values from beeing freed.
+/// Until dropped, this might prevent multiple key/values from being freed.
 /// (i.e. the future that own the data is dropped once all data it provided is dropped)
 pub struct FdbValue {
     _f: Rc<FdbFutureHandle>,
